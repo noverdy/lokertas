@@ -33,16 +33,7 @@
             </div>
             <hr>
             <div class="collapse" id="cara-kerja">
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis vel nunc a condimentum.
-                    Mauris vulputate lacinia diam euismod feugiat. Quisque consequat, neque eu laoreet lacinia, nunc dui
-                    viverra eros, sed interdum velit lacus in quam. Pellentesque cursus aliquet turpis, quis dictum ante
-                    feugiat at. Nullam vitae pharetra arcu. Vestibulum eget rhoncus neque. Praesent eu turpis nulla. Mauris
-                    euismod turpis eu viverra tempor. Suspendisse faucibus, purus at mollis ullamcorper, ipsum diam
-                    efficitur eros, non euismod lorem massa finibus nisi. Aliquam nec finibus mi, a feugiat ipsum. Nulla
-                    commodo lacus vel dolor vestibulum, et pretium lorem malesuada. Sed vestibulum tincidunt turpis, nec
-                    accumsan est rutrum in. Nam eu purus vehicula, molestie dui nec, mollis quam. Praesent eget eros
-                    sagittis, placerat lectus at, convallis nibh. Mauris accumsan dapibus ante id varius. Donec tempor
-                    blandit arcu ut gravida.</div>
+                <div>Lokertas bekerja dengan menemukan pencari kerja dengan pemberi lowongan kerja.</div>
             </div>
         </div>
 
