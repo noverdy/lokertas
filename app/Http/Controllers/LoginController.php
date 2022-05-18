@@ -34,9 +34,9 @@ class LoginController extends Controller
             return redirect()->to('lowongan');
         }
 
-        return back()->withErrors([
+        return back()->withInput()->withErrors([
             'email' => 'Data tidak sesuai.',
-        ])->onlyInput('email');
+        ]);
     }
 
     public function logout(Request $request)

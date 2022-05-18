@@ -10,18 +10,20 @@ class MainCard extends Component
     public $bg;
     public $icon;
     public $title;
+    public $href;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($fg, $bg, $icon, $title)
+    public function __construct($fg, $bg, $icon, $title, $href)
     {
         $this->fg = $fg;
         $this->bg = $bg;
         $this->icon = $icon;
         $this->title = $title;
+        $this->href = $href;
     }
 
     /**

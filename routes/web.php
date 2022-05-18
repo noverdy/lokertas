@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index');
 Route::view('/faq', 'faq');
 Route::view('/lowongan', 'lowongan')->name('lowongan');
 Route::view('/perusahaan', 'perusahaan');
@@ -23,6 +22,14 @@ Route::view('/kategori', 'kategori');
 
 Route::view('/profile', 'profile')->middleware('auth');
 Route::view('/berkas', 'berkas')->middleware('auth');
+
+Route::get('/', function () {
+    $req = Request::create('/api/v1/lowongan', 'GET');
+    $res = Route::dispatch($req);
+    return view('index', [
+        'lowongans' => $res->getData()
+    ]);
+});
 
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');

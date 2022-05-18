@@ -1,0 +1,46 @@
+:root {
+    --nav-height: 100px;
+    /* AKan diganti di JS */
+}
+
+body {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.h-fit {
+    min-height: calc(100vh - var(--nav-height));
+}
+
+.hover-rise {
+    transition: transform 0.2s;
+}
+
+.hover-rise:hover {
+    transform: translateY(-4px);
+}
+
+
+/* Swup */
+
+.transition-fade {
+    transition: opacity 0.3s, transform 0.4s;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+}
+
+html.is-animating.is-leaving .transition-fade {
+    transform: translate3d(0, 30px, 0);
+}
