@@ -16,12 +16,10 @@
             <hr>
             <div class="collapse" id="description">
                 <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nunc in quam vehicula pellentesque id
-                    ut purus. Mauris lobortis erat a felis pharetra, ut blandit lacus euismod. Aenean sed ornare dolor.
-                    Morbi dictum leo id nulla pellentesque elementum vel sit amet nisi. Etiam iaculis tortor vitae varius
-                    gravida. In aliquam accumsan congue. Duis sed mi eu felis interdum consequat. Fusce tincidunt mattis
-                    feugiat. Integer rutrum lacus vel lectus commodo tristique. Quisque rutrum urna libero, a iaculis libero
-                    placerat quis. Aliquam porta tristique libero et cursus. Ut hendrerit nec purus non semper.</div>
+                    Lokertas adalah sebuah sistem informasi yang dapat mempermudah dan membantu para penyandang disabilitas 
+                    dalam mencari pekerjaan yang sesuai dengan keterampilan yang dimiliki tanpa perlu mendatangi 
+                    satu persatu perusahaan secara langsung. Lokertas hadir untuk memastikan para penyandang disabilitas dapat 
+                    mencari lowongan pekerjaan yang cocok hanya dengan melalui perangkat yang mereka miliki</div>
             </div>
         </div>
 
