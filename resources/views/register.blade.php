@@ -1,6 +1,4 @@
-@extends('template')
-
-@section('body')
+<x-layout title="Register">
     <div class="d-flex bg-light align-items-center justify-content-center py-5">
         <form class="bg-white p-5 rounded shadow-sm container" action='/register' method='POST'>
             @csrf
@@ -32,8 +30,8 @@
             </div>
 
             <div class="form-floating mb-3">
-                <input name="password" required type="password" class="form-control @error('password') is-invalid @enderror"
-                    id="passwordInput" placeholder=" ">
+                <input name="password" required type="password"
+                    class="form-control @error('password') is-invalid @enderror" id="passwordInput" placeholder=" ">
                 <label for="passwordInput">Password</label>
                 @error('password')
                     <div class="invalid-feedback">
@@ -69,9 +67,9 @@
 
             <div class="row align-items-center mb-3">
                 <div class="col">
-                    <input name="place_of_birth" placeholder="Tempat Lahir" value="{{ old('place_of_birth') }}" required
-                        type="text" class="form-control @error('place_of_birth') is-invalid @enderror" placeholder=" "
-                        style="height: 3.8rem">
+                    <input name="place_of_birth" placeholder="Tempat Lahir" value="{{ old('place_of_birth') }}"
+                        required type="text" class="form-control @error('place_of_birth') is-invalid @enderror"
+                        placeholder=" " style="height: 3.8rem">
                     @error('place_of_birth')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -105,4 +103,4 @@
             <span>Sudah punya akun? <a href="/login" class="text-decoration-none">Login</a></span>
         </form>
     </div>
-@endsection
+</x-layout>

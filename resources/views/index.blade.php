@@ -1,11 +1,10 @@
-@extends('template', ['title' => 'Lowongan Kerja Disabilitas'])
-
-@section('body')
+<x-layout>
     <div class="bg-light h-fit d-flex align-items-center justify-content-center">
         <div class="container text-center">
             <h1 class="display-1 fw-bold montserrat">Wadah untuk Para Pejuang!</h1>
             <p class="fs-5 mb-5">Jalani hidup dengan optimis, jadikan keterbatasan sebagai kekuatan!</p>
-            <button onclick="scrollToDiv('guide')" class="btn btn-lg text-white rounded-pill" style="background: #F57343">Get
+            <button onclick="scrollToDiv('guide')" class="btn btn-lg text-white rounded-pill"
+                style="background: #F57343">Get
                 Started</button>
         </div>
     </div>
@@ -91,4 +90,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-layout>

@@ -1,6 +1,4 @@
-@extends('template')
-
-@section('body')
+<x-layout title="Login">
     <div class="d-flex bg-light align-items-center justify-content-center py-5">
         <form class="bg-white p-5 rounded shadow-sm container" action='/login' method='POST'>
             @csrf
@@ -14,7 +12,8 @@
                 <label for="usernameInput">Alamat Email atau Username</label>
             </div>
             <div class="form-floating mb-3">
-                <input name="password" required type="password" class="form-control" id="passwordInput" placeholder=" ">
+                <input name="password" required type="password" class="form-control" id="passwordInput"
+                    placeholder=" ">
                 <label for="passwordInput">Password</label>
             </div>
             <button type="submit" class="btn btn-primary me-1">Login</button>
@@ -33,4 +32,4 @@
             @endif
         </form>
     </div>
-@endsection
+</x-layout>

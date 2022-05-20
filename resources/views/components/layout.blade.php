@@ -43,7 +43,7 @@
         <x-navbar />
 
         <div class="transition-fade">
-            @yield('body')
+            {{ $slot }}
         </div>
     </div>
 
