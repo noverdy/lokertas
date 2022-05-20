@@ -33,7 +33,7 @@ class LoginController extends Controller
         }
 
         return back()->withInput()->withErrors([
-            'email' => 'Data tidak sesuai.',
+            'error' => 'Data tidak sesuai.',
         ]);
     }
 

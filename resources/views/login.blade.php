@@ -19,7 +19,7 @@
             <button type="submit" class="btn btn-primary me-1">Login</button>
             <span>Belum punya akun? <a href="/register" class="text-decoration-none">Register</a></span>
 
-            @error('email')
+            @error('error')
                 <div class="alert alert-danger mt-3 text-center" role="alert">
                     {{ $message }}
                 </div>
