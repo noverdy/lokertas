@@ -1,5 +1,5 @@
 <x-layout title="Login">
-    <div class="d-flex bg-light align-items-center justify-content-center py-5">
+    <div class="container d-flex bg-light align-items-center justify-content-center py-5">
         <form class="bg-white p-5 rounded shadow-sm container" action='/login' method='POST'>
             @csrf
             <div class="mb-5 text-center">

@@ -72,13 +72,13 @@
     <div class="p-5 bg-light">
         <div class="container py-5 text-center">
             <h5 class="fs-5 text-success poppins" style="letter-spacing: 0.15rem">Testimoni</h5>
-            <h3 class="display-6 fw-bold mb-4 montserrat">Review Mereka</h3>
+            <h3 class="display-6 fw-bold mb-5 montserrat">Review Mereka</h3>
 
-            <div class="row gy-2 justify-content-center mt-5">
-                <div class="col-5">
-                    <img src="{{ url('img/review.jpg') }}" width=300 class="rounded-5 shadow">
+            <div class="row gy-2 justify-content-center">
+                <div class="col-sm-5 mb-sm-0 mb-5">
+                    <img src="{{ url('img/review.jpg') }}" width=50% class="rounded-5 shadow">
                 </div>
-                <div class="col-4 text-start">
+                <div class="col-sm-4 text-start">
                     <h5>John Doe</h5>
                     <p>Pekerja</p>
 

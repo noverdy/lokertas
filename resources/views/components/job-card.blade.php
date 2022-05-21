@@ -19,6 +19,7 @@
                 {{-- <span class="p-1 rounded" style="background: #F8F7FE; color: #838383; font-size: 0.8rem">
                     {{ $lowongan->occupation }}
                 </span> --}}
+                <div></div>
             </div>
         </div>
     </a>
