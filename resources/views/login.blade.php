@@ -6,16 +6,10 @@
                 <h1 class="fw-bold montserrat">Login</h1>
                 <hr>
             </div>
-            <div class="form-floating mb-3">
-                <input name="username" value="{{ old('username') }}" required type="text" class="form-control"
-                    id="usernameInput" placeholder=" ">
-                <label for="usernameInput">Alamat Email atau Username</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input name="password" required type="password" class="form-control" id="passwordInput"
-                    placeholder=" ">
-                <label for="passwordInput">Password</label>
-            </div>
+
+            <x-floating-input type="text" id="username">Alamat Email atau Username</x-floating-input>
+            <x-floating-input type="password" id="password">Password</x-floating-input>
+
             <button type="submit" class="btn btn-primary me-1">Login</button>
             <span>Belum punya akun? <a href="/register" class="text-decoration-none">Register</a></span>
 

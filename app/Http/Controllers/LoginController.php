@@ -12,6 +12,11 @@ class LoginController extends Controller
         return view('login');
     }
 
+    public function create()
+    {
+        return view('register.index');
+    }
+
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
@@ -24,12 +29,22 @@ class LoginController extends Controller
             return redirect()->to('lowongan');
         }
 
+        if (Auth::guard('company')->attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect('/');
+        }
+
         $credentials['email'] = $credentials['username'];
         unset($credentials['username']);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->to('lowongan');
+        }
+
+        if (Auth::guard('company')->attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect('/');
         }
 
         return back()->withInput()->withErrors([
@@ -40,6 +55,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
+        Auth::guard('company')->logout();
 
         $request->session()->invalidate();
 

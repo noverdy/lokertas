@@ -1,10 +1,10 @@
 <x-layout>
-    <div class="bg-light h-fit d-flex align-items-center justify-content-center">
-        <div class="container text-center">
+    <div class="bg-light h-fit d-flex align-items-center justify-content-center"
+        style="background-image: url({{ asset('img/acri.png') }}); background-size: cover; background-attachment: fixed;">
+        <div class="container text-center text-white">
             <h1 class="display-1 fw-bold montserrat">Wadah untuk Para Pejuang!</h1>
             <p class="fs-5 mb-5">Jalani hidup dengan optimis, jadikan keterbatasan sebagai kekuatan!</p>
-            <button onclick="scrollToDiv('guide')" class="btn btn-lg text-white rounded-pill"
-                style="background: #F57343">Get
+            <button onclick="scrollToDiv('guide')" class="btn btn-lg btn-orange rounded-pill">Get
                 Started</button>
         </div>
     </div>
@@ -36,7 +36,7 @@
                     <x-job-card :lowongan="$lowongan" />
                 @endforeach
             </div>
-            <a href="/lowongan" class="btn text-white" style="background: #F57343">Lihat
+            <a href="/lowongan" class="btn text-white btn-orange">Lihat
                 Lebih Banyak</a>
         </div>
     </div>
@@ -59,7 +59,7 @@
                     x Lowongan
                 </x-main-card>
             </div>
-            <a href="/kategori" class="btn text-white mt-4" style="background: #F57343">Lihat
+            <a href="/kategori" class="btn text-white mt-4 btn-orange">Lihat
                 Lebih Banyak</a>
         </div>
     </div>

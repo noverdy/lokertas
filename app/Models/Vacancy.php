@@ -2,16 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 use App\Traits\UsesUuid;
 
-class User extends Authenticatable
+class Vacancy extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory, Notifiable;
     use UsesUuid;
 
     /**
@@ -21,7 +19,6 @@ class User extends Authenticatable
      */
     protected $guarded = [
         'id',
-        'email_verified_at'
     ];
 
     /**
@@ -29,18 +26,17 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $hidden = [];
 
     /**
      * The attributes that should be cast.
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'date_of_birth' => 'date',
-        'email_verified_at' => 'datetime',
-    ];
+    protected $casts = [];
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }

@@ -1,4 +1,4 @@
-<x-layout title="lowongan">
+<x-layout title="Lowongan">
     <div class="bg-light" style="padding: 8rem 0">
         <div class="container text-center">
             <h1 class="display-1 fw-bold montserrat">Lowongan</h1>

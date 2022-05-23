@@ -38,13 +38,19 @@
     <title>Lokertas | {{ $title }}</title>
 </head>
 
-<body style="overflow-y: scroll">
-    <div id="swup" class="bg-light">
-        <x-navbar />
+<body>
+    <div id="app" class="bg-light">
+        @auth('company')
+            <x-company.navbar />
+        @else
+            <x-navbar />
+        @endauth
 
         <div class="transition-fade">
             {{ $slot }}
         </div>
+
+        @stack('modal')
     </div>
 
     <x-footer />

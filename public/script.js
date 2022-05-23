@@ -1,4 +1,8 @@
-const swup = new Swup();
+const swup = new Swup({
+    containers: ["#app"],
+    animateHistoryBrowsing: true
+});
+
 swup.on('animationInStart', () => window.scrollTo({
     top: 0,
     behavior: 'instant',

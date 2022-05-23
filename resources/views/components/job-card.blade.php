@@ -15,11 +15,7 @@
                 <span class="px-2 py-1 rounded me-2" style="background: #F8ECE8; color: #F36532; font-size: 0.8rem">
                     <i class="fa-solid fa-location-dot"></i> {{ $lowongan->location }}
                 </span>
-                <button class="btn text-white" style="background:#F36532">Daftar</button>
-                {{-- <span class="p-1 rounded" style="background: #F8F7FE; color: #838383; font-size: 0.8rem">
-                    {{ $lowongan->occupation }}
-                </span> --}}
-                <div></div>
+                <button class="btn btn-orange">Daftar</button>
             </div>
         </div>
     </a>

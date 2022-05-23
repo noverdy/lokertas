@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Traits\UsesUuid;
 
-class User extends Authenticatable
+class Company extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     use UsesUuid;
@@ -40,7 +40,11 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'date_of_birth' => 'date',
         'email_verified_at' => 'datetime',
     ];
+
+    public function vacancies()
+    {
+        return $this->hasMany(Vacancy::class)->orderBy('created_at', 'DESC');
+    }
 }

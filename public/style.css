@@ -27,8 +27,28 @@ body {
     transform: translateY(-4px);
 }
 
+.btn-orange {
+    background-color: #F57343;
+    color: white;
+}
+
+.btn-orange:hover,
+.btn-orange:focus,
+.btn-orange:active {
+    background-color: #fb8357;
+    color: white;
+    border: 1px solid white;
+}
 
 /* Swup */
+
+.transition-none,
+html.is-animating .transition-none,
+html.is-animating.is-leaving .transition-none {
+    transition: opacity 0.3s, transform 0.4s;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
 
 .transition-fade {
     transition: opacity 0.3s, transform 0.4s;

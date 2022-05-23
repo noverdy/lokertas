@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VacancyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,22 +20,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::group(['middleware' => 'guest'], function () {
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth:web,company');
+Route::view('/berkas', 'berkas')->middleware('auth');
+
+Route::resource('/vacancy', VacancyController::class)->middleware('auth:company');
+
+
+Route::group(['middleware' => ['guest', 'guest:company']], function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'authenticate']);
-    Route::get('/register', [RegisterController::class, 'index']);
-    Route::post('/register', [RegisterController::class, 'store']);
+
+    Route::group(['prefix' => 'register'], function () {
+        Route::get('/', [LoginController::class, 'create']);
+
+        Route::get('/user', [UserController::class, 'create']);
+        Route::post('/user', [UserController::class, 'store']);
+
+        Route::get('/company', [CompanyController::class, 'create']);
+        Route::post('/company', [CompanyController::class, 'store']);
+    });
 });
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::post('/logout', [LoginController::class, 'logout']);
-    Route::view('/profile', 'profile');
-    Route::view('/berkas', 'berkas');
+Route::group(['middleware' => 'guest:company'], function () {
+    Route::view('/lowongan', 'lowongan')->name('lowongan');
+    Route::view('/perusahaan', 'perusahaan');
+    Route::view('/kategori', 'kategori');
 });
-
 
 Route::view('/faq', 'faq');
-Route::view('/lowongan', 'lowongan')->name('lowongan');
-Route::view('/perusahaan', 'perusahaan');
-Route::view('/kategori', 'kategori');
