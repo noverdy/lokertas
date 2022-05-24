@@ -1,12 +1,7 @@
 const swup = new Swup({
     containers: ["#app"],
-    animateHistoryBrowsing: true
+    animateHistoryBrowsing: true,
 });
-
-swup.on('animationInStart', () => window.scrollTo({
-    top: 0,
-    behavior: 'instant',
-}));
 
 window.onload = () => {
     const r = document.querySelector(':root')
@@ -25,4 +20,8 @@ const scrollToDiv = (id) => {
         top: offsetPosition,
         behavior: 'smooth',
     })
+}
+
+const scrollToTop = () => {
+    scrollToDiv('app')
 }

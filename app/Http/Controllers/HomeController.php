@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Vacancy;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
 
 class HomeController extends Controller
 {
@@ -12,14 +11,12 @@ class HomeController extends Controller
     {
         if (Auth::guard('company')->check()) {
             return view('company.index', [
-                'vacancies' => Auth::guard('company')->user()->vacancies
+                'vacancies' => Auth::guard('company')->user()->vacancies()->paginate(10)
             ]);
         }
 
-        $req = Request::create('/api/v1/lowongan', 'GET');
-        $res = Route::dispatch($req);
         return view('index', [
-            'lowongans' => $res->getData()
+            'vacancies' => Vacancy::all()->random(6)
         ]);
     }
 }

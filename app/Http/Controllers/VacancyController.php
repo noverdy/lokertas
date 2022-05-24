@@ -15,7 +15,17 @@ class VacancyController extends Controller
      */
     public function index()
     {
-        //
+        $vacancies = Vacancy::latest();
+
+        if (request('search')) {
+            $vacancies->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('address', 'like', '%' . request('search') . '%')
+                ->orWhereRelation('company', 'name', 'like', '%' . request('search') . '%');
+        }
+
+        return view('vacancy', [
+            'vacancies' => $vacancies->paginate(12)
+        ]);
     }
 
     /**

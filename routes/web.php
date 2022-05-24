@@ -22,11 +22,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth:web,company');
 Route::view('/berkas', 'berkas')->middleware('auth');
 
-Route::resource('/vacancy', VacancyController::class)->middleware('auth:company');
-
+Route::group(['middleware' => 'auth:web,company'], function () {
+    Route::resource('/vacancy', VacancyController::class);
+    Route::get('/profile', [ProfileController::class, 'index']);
+    Route::put('/profile', [ProfileController::class, 'update']);
+});
 
 Route::group(['middleware' => ['guest', 'guest:company']], function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -44,7 +46,6 @@ Route::group(['middleware' => ['guest', 'guest:company']], function () {
 });
 
 Route::group(['middleware' => 'guest:company'], function () {
-    Route::view('/lowongan', 'lowongan')->name('lowongan');
     Route::view('/perusahaan', 'perusahaan');
     Route::view('/kategori', 'kategori');
 });

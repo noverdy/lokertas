@@ -38,8 +38,8 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'username' => 'required|min:3|max:255|unique:users',
-            'email' => 'required|email|unique:users',
+            'username' => 'required|min:3|max:255|unique:companies',
+            'email' => 'required|email|unique:companies',
             'password' => 'required|confirmed|min:5|max:255',
             'name' => 'required|max:255',
             'address' => 'required',
@@ -49,9 +49,7 @@ class CompanyController extends Controller
 
         Company::create($validatedData);
 
-        $request->session()->flash('success', 'Pendaftaran berhasil! Silakan login.');
-
-        return redirect('login');
+        return redirect('login')->with('success', 'Pendaftaran berhasil! Silakan login.');
     }
 
     /**

@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-lg bg-light">
     <div class="container">
-        <a class="navbar-brand poppins fw-semibold fs-4" href="/" onclick="scrollToDiv('app')">
+        <a class="navbar-brand poppins fw-semibold fs-4" href="/" onclick="scrollToTop()">
             <img src="{{ url('icon.png') }}" width=40 class="me-1 rounded">
             Lokertas <span class="fw-normal">Business</span>
         </a>
@@ -17,7 +17,7 @@
                     {{ Auth::guard('company')->user()->name }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/profile">Profil</a></li>
+                    <li><a class="dropdown-item" href="/profile" onclick="scrollToTop()">Profil</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>

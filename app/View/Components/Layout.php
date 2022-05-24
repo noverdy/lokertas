@@ -7,15 +7,17 @@ use Illuminate\View\Component;
 class Layout extends Component
 {
     public $title;
+    public $transition;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title = 'Lowongan Kerja Disabilitas')
+    public function __construct($title = 'Lowongan Kerja Disabilitas', $transition = 'on')
     {
         $this->title = $title;
+        $this->transition = $transition;
     }
 
     /**

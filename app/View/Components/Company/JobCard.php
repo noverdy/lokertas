@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Company;
 
 use Illuminate\View\Component;
 
@@ -24,6 +24,6 @@ class JobCard extends Component
      */
     public function render()
     {
-        return view('components.job-card');
+        return view('components.company.job-card');
     }
 }

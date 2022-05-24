@@ -29,21 +29,21 @@
 
     <div class="p-5" style="background: #EFEEF3">
         <div class="container py-5">
-            <h5 class="fs-5 poppins" style="letter-spacing: 0.15rem; color: #864BD8">Pekerjaan di sekitarmu</h5>
+            <h5 class="fs-5 poppins" style="letter-spacing: 0.15rem; color: #864BD8">100+ Pekerjaan</h5>
             <h1 class="montserrat fw-bold">Pekerjaan Unggulan</h1>
             <div class="row g-5 mt-3 mb-5">
-                @foreach ($lowongans as $lowongan)
-                    <x-job-card :lowongan="$lowongan" />
+                @foreach ($vacancies as $vacancy)
+                    <x-job-card :vacancy="$vacancy" />
                 @endforeach
             </div>
-            <a href="/lowongan" class="btn text-white btn-orange">Lihat
+            <a href="/vacancy" class="btn text-white btn-orange">Lihat
                 Lebih Banyak</a>
         </div>
     </div>
 
     <div class="bg-light h-fit d-flex align-items-center justify-content-center">
         <div class="container py-5 text-center">
-            <h5 class="fs-5 poppins" style="letter-spacing: 0.15rem; color: #F57343">9+ Kategori Pekerjaan</h5>
+            <h5 class="fs-5 poppins" style="letter-spacing: 0.15rem; color: #F57343">Kategori Pekerjaan</h5>
             <h3 class="display-6 fw-bold montserrat">Cari Berdasarkan Kategori</h3>
             <div class="row g-5 my-4">
                 <x-main-card href="/acri" fg="01B075" bg="E4F7F1" icon="fa-pen-fancy" title="Pekerjaan A">

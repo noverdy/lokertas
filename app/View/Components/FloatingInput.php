@@ -8,15 +8,17 @@ class FloatingInput extends Component
 {
     public $type;
     public $id;
+    public $value;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($type, $id)
+    public function __construct($type, $id, $value = null)
     {
         $this->type = $type;
         $this->id = $id;
+        $this->value = $value;
     }
 
     /**

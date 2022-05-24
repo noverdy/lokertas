@@ -51,9 +51,7 @@ class UserController extends Controller
 
         User::create($validatedData);
 
-        $request->session()->flash('success', 'Pendaftaran berhasil! Silakan login.');
-
-        return redirect('login');
+        return redirect('login')->with('success', 'Pendaftaran berhasil! Silakan login.');
     }
 
     /**

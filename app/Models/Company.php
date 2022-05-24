@@ -45,6 +45,6 @@ class Company extends Authenticatable
 
     public function vacancies()
     {
-        return $this->hasMany(Vacancy::class)->orderBy('created_at', 'DESC');
+        return $this->hasMany(Vacancy::class);
     }
 }

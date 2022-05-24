@@ -46,7 +46,7 @@
             <x-navbar />
         @endauth
 
-        <div class="transition-fade">
+        <div class="{{ $transition === 'on' ? 'transition-fade-rise' : '' }}">
             {{ $slot }}
         </div>
 

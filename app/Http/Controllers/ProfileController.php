@@ -15,4 +15,18 @@ class ProfileController extends Controller
 
         return view('profile');
     }
+
+    public function update(Request $request)
+    {
+        $validatedData = $request->validate([
+            'username' => 'required|min:3|max:255|unique:companies,username,' . Auth::guard('company')->user()->id,
+            'email' => 'required|email|unique:companies,email,' . Auth::guard('company')->user()->id,
+            'name' => 'required|max:255',
+            'address' => 'required',
+        ]);
+
+        Auth::guard('company')->user()->update($validatedData);
+
+        return redirect()->back()->with('success', 'Update berhasil.');
+    }
 }

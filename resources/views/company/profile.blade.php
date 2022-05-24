@@ -7,9 +7,17 @@
                         alt="Company Profile Logo">
                 </div>
                 <div class="col-md-6">
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    @endif
                     <h1 class="display-3 fw-bold montserrat">{{ Auth::guard('company')->user()->name }}</h1>
                     <div class="fs-5">Profil Perusahaan</div>
-                    <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit
+                    <a href="#" class="text-decoration-none" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">Edit
                         Profil</a>
                 </div>
             </div>
@@ -50,13 +58,19 @@
                         <h5 class="modal-title" id="staticBackdropLabel">Edit Profil</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="/profile/{{ Auth::guard('company')->user()->id }}" method="post">
+                    <form action="/profile" method="post">
                         @method('put')
+                        @csrf
                         <div class="modal-body">
-                            <x-floating-input type="text" id="username">Username</x-floating-input>
-                            <x-floating-input type="text" id="name">Nama Perusahaan</x-floating-input>
-                            <x-floating-input type="email" id="email">Email</x-floating-input>
-                            <x-floating-input type="text" id="address">Alamat</x-floating-input>
+                            <x-floating-input type="text" id="username"
+                                value="{{ Auth::guard('company')->user()->username }}">
+                                Username</x-floating-input>
+                            <x-floating-input type="text" id="name" value="{{ Auth::guard('company')->user()->name }}">
+                                Nama Perusahaan</x-floating-input>
+                            <x-floating-input type="email" id="email" value="{{ Auth::guard('company')->user()->email }}">
+                                Email</x-floating-input>
+                            <x-floating-input type="text" id="address"
+                                value="{{ Auth::guard('company')->user()->address }}">Alamat</x-floating-input>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
