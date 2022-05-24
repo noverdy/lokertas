@@ -7,9 +7,16 @@
                         <i class="fas fa-gem me-3"></i>Lokertas
                     </h6>
                     <p>
-                        Lokertas dapat mempermudah para penyandang disabilitas dalam mencari lowongan pekerjaan yang
-                        sesuai dengan keadaan yang mereka miliki.
+                        Lokertas dapat mempermudah para penyandang disabilitas dalam mencari lowongan pekerjaan.
                     </p>
+
+                    <div>
+                        <a href="/terms-and-conditions" class="text-reset text-decoration-none">Syarat dan
+                            Ketentuan</a>
+                    </div>
+                    <div>
+                        <a href="/privacy-policy" class="text-reset text-decoration-none">Kebijakan Privasi</a>
+                    </div>
                 </div>
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">

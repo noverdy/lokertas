@@ -43,4 +43,9 @@ class User extends Authenticatable
         'date_of_birth' => 'date',
         'email_verified_at' => 'datetime',
     ];
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
 }

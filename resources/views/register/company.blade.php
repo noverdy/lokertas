@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Register Perusahaan">
     <div class="container d-flex bg-light align-items-center justify-content-center py-5">
         <form class="bg-white p-5 rounded shadow-sm container" action='/register/company' method='POST'>
             @csrf

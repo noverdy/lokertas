@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         if (Auth::guard('company')->check()) {
             return view('company.index', [
-                'vacancies' => Auth::guard('company')->user()->vacancies()->paginate(10)
+                'vacancies' => Auth::guard('company')->user()->vacancies()->latest()->paginate(6)
             ]);
         }
 

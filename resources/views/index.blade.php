@@ -1,10 +1,10 @@
 <x-layout>
     <div class="bg-light h-fit d-flex align-items-center justify-content-center"
-        style="background-image: url({{ asset('img/acri.png') }}); background-size: cover; background-attachment: fixed;">
-        <div class="container text-center text-white">
+        style="background-image: url({{ asset('img/bg.png') }}); background-size: cover;">
+        <div class="container text-center text-white" style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
             <h1 class="display-1 fw-bold montserrat">Wadah untuk Para Pejuang!</h1>
             <p class="fs-5 mb-5">Jalani hidup dengan optimis, jadikan keterbatasan sebagai kekuatan!</p>
-            <button onclick="scrollToDiv('guide')" class="btn btn-lg btn-orange rounded-pill">Get
+            <button onclick="scrollToDiv('guide')" class="btn btn-lg btn-orange rounded-pill shadow-sm">Get
                 Started</button>
         </div>
     </div>
@@ -41,30 +41,30 @@
         </div>
     </div>
 
-    <div class="bg-light h-fit d-flex align-items-center justify-content-center">
+    {{-- <div class="bg-light h-fit d-flex align-items-center justify-content-center">
         <div class="container py-5 text-center">
             <h5 class="fs-5 poppins" style="letter-spacing: 0.15rem; color: #F57343">Kategori Pekerjaan</h5>
             <h3 class="display-6 fw-bold montserrat">Cari Berdasarkan Kategori</h3>
             <div class="row g-5 my-4">
-                <x-main-card href="/acri" fg="01B075" bg="E4F7F1" icon="fa-pen-fancy" title="Pekerjaan A">
-                    x Lowongan
+                <x-main-card href="/acri" fg="01B075" bg="E4F7F1" icon="fa-pen-fancy" title="Teknologi">
+                    23 Lowongan
                 </x-main-card>
-                <x-main-card href="/crid" fg="FB5F1C" bg="FFEAE0" icon="fa-briefcase" title="Pekerjaan C">
-                    x Lowongan
+                <x-main-card href="/crid" fg="FB5F1C" bg="FFEAE0" icon="fa-briefcase" title="Jasa">
+                    41 Lowongan
                 </x-main-card>
-                <x-main-card href="/rido" fg="FFB200" bg="F8F0DE" icon="fa-gear" title="Pekerjaan R">
-                    x Lowongan
+                <x-main-card href="/rido" fg="FFB200" bg="F8F0DE" icon="fa-gear" title="Kesehatan">
+                    17 Lowongan
                 </x-main-card>
-                <x-main-card href="/idok" fg="864BD8" bg="EAE1F6" icon="fa-paper-plane" title="Pekerjaan I">
-                    x Lowongan
+                <x-main-card href="/idok" fg="864BD8" bg="EAE1F6" icon="fa-paper-plane" title="Pertambangan">
+                    8 Lowongan
                 </x-main-card>
             </div>
             <a href="/kategori" class="btn text-white mt-4 btn-orange">Lihat
                 Lebih Banyak</a>
         </div>
-    </div>
+    </div> --}}
 
-    <div class="bg-light d-flex justify-content-center">
+    <div class="bg-light d-flex justify-content-center pt-5">
         <div class="me-1" style="background: #864BD8; width: 2rem; height: 0.15rem"></div>
         <div style="background: #c0acdc; width: 3rem; height: 0.15rem"></div>
     </div>
@@ -79,10 +79,12 @@
                     <img src="{{ url('img/review.jpg') }}" width=50% class="rounded-5 shadow">
                 </div>
                 <div class="col-sm-4 text-start">
-                    <h5>John Doe</h5>
-                    <p>Pekerja</p>
+                    <h5>Ndara Qonnuri</h5>
+                    <p>Mahasiswa</p>
 
-                    <p class="fst-italic">"Sangat membantu."</p>
+                    <p class="fst-italic">"Aplikasi ini sangat membantu saya dalam mencari pekerjaan di tengah
+                        pandemi ini. Terima kasih Lokertas karena telah memfasilitasi saya dalam melakukan pencarian
+                        pekerjaan yang sesuai dengan kemampuan yang saya miliki."</p>
                     <span class="text-warning"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i></span>

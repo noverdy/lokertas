@@ -7,15 +7,12 @@
         </svg>
     </div>
     <div class="col col-md-6">
-        <h2 class="fs-4 fw-bold montserrat">{{ $vacancy->title }}</h2>
+        <h2 class="fs-4 fw-bold montserrat">{{ $company->name }}</h2>
         <span class="px-2 py-1 rounded me-2" style="background: #F8ECE8; color: #F36532; font-size: 0.8rem">
-            <i class="fa-solid fa-location-dot"></i> {{ $vacancy->city }}
-        </span>
-        <span class="px-2 py-1 rounded me-2" style="background: #F8F7FE; color: #838383; font-size: 0.8rem">
-            {{ $vacancy->salary }}
+            <i class="fa-solid fa-location-dot"></i> {{ $company->address }}
         </span>
     </div>
     <div class="col-12 col-md-5 d-flex justify-content-center justify-content-md-end">
-        <a href="/vacancy/{{ $vacancy->id }}" class="btn btn-orange rounded-pill me-3">Lihat Detail</a>
+        <a href="/company/{{ $company->id }}" class="btn btn-orange rounded-pill me-3">Lihat Detail</a>
     </div>
 </div>

@@ -20,10 +20,14 @@ class VacancyFactory extends Factory
         return [
             'title' => $this->faker->jobTitle(),
             'description' => $this->faker->text(),
-            'address' => $this->faker->address(),
+            'street' => $this->faker->streetAddress(),
+            'city' => $this->faker->cityName(),
+            'province' => $this->faker->state(),
+            'postal_code' => $this->faker->postcode(),
             'requirement' => $this->faker->text(100),
-            'salary' => 'Rp' . $this->faker->randomNumber(9),
+            'salary' => 'Rp' . number_format($this->faker->randomNumber(4, true) * 1000, 0, ',', '.'),
             'company_id' => Company::all()->random()->id,
+            'created_at' => $this->faker->dateTimeBetween($startDate = '-6 month', $endDate = 'now')
         ];
     }
 }

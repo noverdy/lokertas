@@ -16,7 +16,16 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        $companies = Company::latest();
+
+        if (request('search')) {
+            $companies->where('name', 'like', '%' . request('search') . '%')
+                ->orWhere('address', 'like', '%' . request('search') . '%');
+        }
+
+        return view('company', [
+            'companies' => $companies->paginate(6)
+        ]);
     }
 
     /**
@@ -60,7 +69,10 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        //
+        return view('company.profile', [
+            'user' => $company,
+            'ownProfile' => false
+        ]);
     }
 
     /**

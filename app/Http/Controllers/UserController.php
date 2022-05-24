@@ -60,9 +60,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('profile', [
+            'user' => $user,
+            'ownProfile' => false
+        ]);
     }
 
     /**
@@ -85,7 +88,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request);
+        //
     }
 
     /**

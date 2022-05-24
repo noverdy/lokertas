@@ -19,7 +19,7 @@ class VacancyController extends Controller
 
         if (request('search')) {
             $vacancies->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('address', 'like', '%' . request('search') . '%')
+                ->orWhere('city', 'like', '%' . request('search') . '%')
                 ->orWhereRelation('company', 'name', 'like', '%' . request('search') . '%');
         }
 
@@ -49,13 +49,16 @@ class VacancyController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|min:3|max:255',
             'description' => 'required|min:3|max:255',
-            'address' => 'required',
+            'street' => 'required',
+            'city' => 'required',
+            'province' => 'required',
+            'postal_code' => 'required|digits:5',
             'requirement' => 'required|min:3|max:255',
-            'salary' => 'required|min:3|max:255',
+            'salary' => 'required|min:3|max:255|numeric',
         ]);
 
         $validatedData['company_id'] = Auth::guard('company')->user()->id;
-        $validatedData['salary'] = 'Rp' . $validatedData['salary'];
+        $validatedData['salary'] = 'Rp' . number_format($validatedData['salary'], 0, ',', '.');
 
         Vacancy::create($validatedData);
 
@@ -72,7 +75,21 @@ class VacancyController extends Controller
      */
     public function show(Vacancy $vacancy)
     {
-        return dd($vacancy->toArray());
+        if (Auth::guard('web')->check()) {
+            return view('vacancy-details', [
+                'vacancy' => $vacancy,
+                'applied' => (Auth::user()->applications()->where('vacancy_id', '=', $vacancy->id)->count() > 0)
+            ]);
+        }
+
+        if (Auth::guard('company')->user()->vacancies()->where('id', '=', $vacancy->id)->count() === 0) {
+            return redirect()->back();
+        }
+
+        return view('company.applicant', [
+            'vacancy' => $vacancy,
+            'applications' => $vacancy->applications()->paginate(10)
+        ]);
     }
 
     /**
@@ -106,6 +123,9 @@ class VacancyController extends Controller
      */
     public function destroy(Vacancy $vacancy)
     {
-        //
+        if ($vacancy->company->id === Auth::guard('company')->user()->id) {
+            $vacancy->delete();
+        }
+        return redirect('/');
     }
 }

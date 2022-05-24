@@ -1,7 +1,7 @@
 <x-layout title="Perusahaan Anda" transition="off">
-    <div class="bg-light py-5">
+    <div class="bg-light py-5 mb-5`">
         <div class="container text-center">
-            @if (session()->has('success'))
+            @if (session('success'))
                 <div class="alert alert-success mt-3 text-center" role="alert">
                     {{ session('success') }}
                 </div>
@@ -13,15 +13,20 @@
     </div>
     <div class="bg-light">
         <div class="container">
-            @if ($vacancies)
-                {{ $vacancies->links() }}
-            @endif
-
-            @forelse($vacancies as $vacancy)
-                <x-company.job-card :vacancy="$vacancy" />
-            @empty
-                <h1>Belum ada Lowongan</h1>
-            @endforelse
+            <div class="mb-2">
+                @if ($vacancies)
+                    {{ $vacancies->onEachSide(1)->links() }}
+                @endif
+            </div>
+            <div class="mb-5 transition-fade">
+                @forelse ($vacancies as $vacancy)
+                    <x-company.job-card :vacancy="$vacancy" />
+                @empty
+                    <div class="text-center">
+                        <h2 class="poppins">Tidak ada data</h2>
+                    </div>
+                @endforelse
+            </div>
         </div>
     </div>
 </x-layout>

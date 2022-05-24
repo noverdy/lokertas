@@ -1,4 +1,4 @@
-<div class="row align-items-center p-2 p-md-4 bg-white rounded shadow hover-rise mb-4">
+<div class="row align-items-center p-2 p-md-4 bg-white rounded shadow hover-rise mb-3">
     <div class="col-3 col-md-1 py-3 py-sm-0">
         <svg width="100%" viewBox="0 0 87 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -7,15 +7,17 @@
         </svg>
     </div>
     <div class="col col-md-6">
-        <h2 class="fs-4 fw-bold montserrat">{{ $vacancy->title }}</h2>
+        <h2 class="fs-4 fw-bold montserrat">{{ $application->vacancy->title }}</h2>
         <span class="px-2 py-1 rounded me-2" style="background: #F8ECE8; color: #F36532; font-size: 0.8rem">
-            <i class="fa-solid fa-location-dot"></i> {{ $vacancy->city }}
+            <i class="fa-solid fa-location-dot"></i> {{ $application->vacancy->city }}
         </span>
         <span class="px-2 py-1 rounded me-2" style="background: #F8F7FE; color: #838383; font-size: 0.8rem">
-            {{ $vacancy->salary }}
+            {{ $application->vacancy->salary }}
         </span>
     </div>
     <div class="col-12 col-md-5 d-flex justify-content-center justify-content-md-end">
-        <a href="/vacancy/{{ $vacancy->id }}" class="btn btn-orange rounded-pill me-3">Lihat Detail</a>
+        <a href="/storage/documents/{{ $application->document }}" target="_blank"
+            class="btn btn-orange rounded-pill">Lihat
+            Berkas</a>
     </div>
 </div>

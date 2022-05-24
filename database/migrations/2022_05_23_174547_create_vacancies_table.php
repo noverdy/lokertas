@@ -18,10 +18,13 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('title');
             $table->text('description');
-            $table->string('address');
+            $table->string('street');
+            $table->string('city');
+            $table->string('province');
+            $table->string('postal_code');
             $table->text('requirement');
             $table->string('salary');
-            $table->foreignUuid('company_id')->constrained();
+            $table->foreignUuid('company_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
