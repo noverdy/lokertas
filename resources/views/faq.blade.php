@@ -14,11 +14,12 @@
             <hr>
             <div class="collapse" id="description">
                 <div>
-                    Lokertas adalah sebuah sistem informasi yang dapat mempermudah dan membantu para penyandang
+                    Lokertas merupakan sebuah sistem informasi yang dapat mempermudah dan membantu para penyandang
                     disabilitas dalam mencari pekerjaan yang sesuai dengan keterampilan yang dimiliki tanpa perlu
                     mendatangi satu persatu perusahaan secara langsung. Lokertas hadir untuk memastikan para penyandang
                     disabilitas dapat mencari lowongan pekerjaan yang cocok hanya dengan melalui perangkat yang mereka
-                    miliki.</div>
+                    miliki.
+                </div>
             </div>
         </div>
 
@@ -30,7 +31,13 @@
             </div>
             <hr>
             <div class="collapse" id="cara-kerja">
-                <div>Lokertas bekerja dengan menemukan pencari kerja dengan pemberi lowongan kerja.</div>
+                <div>
+                    Lokertas bekerja dengan menemukan pencari kerja dengan pemberi lowongan kerja. Pemberi lowongan
+                    dapat membuka beberapa lowongan dengan mengisi data-data yang dibutuhkan seperti kriteria, gaji,
+                    syarat, dan yang lainnya. Pencari kerja dapat mencari pekerjaan yang sesuai diinginkan dengan
+                    memanfaatkan fitur <i>search</i> yang tersedia maupun imelalui fitur pekerjaan unggulan pada <i>
+                        homepage</i>.
+                </div>
             </div>
         </div>
 
@@ -43,10 +50,10 @@
             <hr>
             <div class="collapse" id="fitur">
                 <div>
-                    Lokertas menyediakan fitur untuk Pelamar untuk mencari pekerjaan yang cocok berdasarkan berbagai
+                    Lokertas menyediakan fitur bagi Pelamar untuk mencari pekerjaan yang cocok berdasarkan berbagai
                     kategori yang ada. Lokertas juga menyediakan fitur bagi Perusahaan untuk mengiklankan lowongan
-                    pekerjaan yang dibuka. Selain itu, Lokertas juga menyediakan berbagai fitur menarik lainnya dengan
-                    tujuan utama menjadi penghubung antara penyedia kerja dengan para Pelamar.
+                    pekerjaan yang dibuka. Selain itu, Lokertas juga menyediakan berbagai fitur menarik lainnya
+                    dengan tujuan utama menjadi penghubung antara penyedia kerja dengan para Pelamar.
                 </div>
             </div>
         </div>
@@ -60,8 +67,8 @@
             <hr>
             <div class="collapse" id="kontak">
                 <div>
-                    Jangan ragu untuk hubungi kami melalui Call Center (+62)859-5589-0236, Email support@lokertas.com,
-                    atau di kantor pusat Lokertas yang berada di Sawojajar, Malang Kota.
+                    Jangan ragu untuk hubungi kami melalui Call Center (+62)859-5589-0236, Email
+                    support@lokertas.com, atau di kantor pusat Lokertas yang berada di Sawojajar, Malang Kota.
                 </div>
             </div>
         </div>
