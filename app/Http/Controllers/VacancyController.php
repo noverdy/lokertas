@@ -54,7 +54,7 @@ class VacancyController extends Controller
             'province' => 'required',
             'postal_code' => 'required|digits:5',
             'requirement' => 'required|min:3|max:255',
-            'salary' => 'required|min:3|max:255|numeric',
+            'salary' => 'required|min:0|numeric',
         ]);
 
         $validatedData['company_id'] = Auth::guard('company')->user()->id;
