@@ -1,6 +1,6 @@
 <x-layout>
     <div class="bg-light h-fit d-flex align-items-center justify-content-center"
-        style="background-image: url({{ asset('img/bg.png') }}); background-size: cover;">
+        style="background-image: url({{ asset('img/bg.jpg') }}); background-size: cover;">
         <div class="container text-center text-white" style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
             <h1 class="display-1 fw-bold montserrat">Wadah untuk Para Pejuang!</h1>
             <p class="fs-5 mb-5">Jalani hidup dengan optimis, jadikan keterbatasan sebagai kekuatan!</p>
